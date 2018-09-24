@@ -39,7 +39,7 @@ public class BogoSort {
 	}
 
 	public static void main(String[] args) {
-		int[] i = { 1, 5, 2, 8, 5, 2, 4, 2, 6, 7, 66, 1, 2, 3, 4, 2, 3, 4, 1, 5, 7, 88, 98, 24 };
+		int[] i = { 1, 5, 2, 8, 5, 4, 1, 5, 7, 88, 98, 24, 4, 212, 32, 1, 312, 132 };
 		new BogoSort(i);
 	}
 
