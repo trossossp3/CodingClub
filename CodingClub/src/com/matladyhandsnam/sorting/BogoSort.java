@@ -1,5 +1,8 @@
 package com.matladyhandsnam.sorting;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+
 public class BogoSort {
 
 	public BogoSort(int[] i) {
@@ -43,6 +46,7 @@ public class BogoSort {
 	}
 
 	public static void main(String[] args) {
+
 		int[] i = { 237642, 962984, 510246, 327116, 233596, 69512, 696262, 698020, 334453, 283565, };
 		new BogoSort(i);
 	}

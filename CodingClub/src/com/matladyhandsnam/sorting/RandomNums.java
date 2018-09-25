@@ -21,6 +21,7 @@ public class RandomNums {
 	}
 
 	private static void print(int[] arr) throws IOException {
+		
 
 		FileWriter fileWriter = new FileWriter(
 				"C:\\Dev\\CodingClub\\CodingClub\\src\\com\\matladyhandsnam\\sorting\\test1.txt");
