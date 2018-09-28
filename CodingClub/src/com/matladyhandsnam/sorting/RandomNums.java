@@ -36,7 +36,7 @@ public class RandomNums {
 	public static void main(String[] args) throws IOException {
 		int lowerBound = -100;
 		int upperBound = 1001000;
-		int amountNums = 10;
+		int amountNums = 50;
 		random(lowerBound, upperBound, amountNums);
 	}
 
