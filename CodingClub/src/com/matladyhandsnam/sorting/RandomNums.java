@@ -6,6 +6,8 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 public class RandomNums {
+	
+	public static int[] arr;
 
 	private static void random(int n1, int n2, int n3) throws IOException {
 		int[] arr = new int[n3];
@@ -38,7 +40,7 @@ public class RandomNums {
 
 		int lowerBound = -100;
 		int upperBound = 100;
-		int amountNums = 10;
+		int amountNums = 10000;
 
 		random(lowerBound, upperBound, amountNums);
 	}
