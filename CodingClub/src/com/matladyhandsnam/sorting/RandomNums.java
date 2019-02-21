@@ -17,26 +17,29 @@ public class RandomNums {
 			}
 
 		}
-		print(arr);
+		print(arr, n3);
 	}
 
-	private static void print(int[] arr) throws IOException {
-		
+	private static void print(int[] arr, int amountNums) throws IOException {
 
 		FileWriter fileWriter = new FileWriter(
 				"C:\\Dev\\CodingClub\\CodingClub\\src\\com\\matladyhandsnam\\sorting\\test1.txt");
 		PrintWriter printWriter = new PrintWriter(fileWriter);
 
+		printWriter.println(amountNums);
 		for (int i = 0; i < arr.length; i++) {
-			printWriter.write(arr[i] + ",");
+			printWriter.println(arr[i]);
+			System.out.println(arr[i]);
 		}
 		printWriter.close();
 	}
 
 	public static void main(String[] args) throws IOException {
+
 		int lowerBound = -100;
-		int upperBound = 1001000;
-		int amountNums = 50;
+		int upperBound = 100;
+		int amountNums = 10;
+
 		random(lowerBound, upperBound, amountNums);
 	}
 

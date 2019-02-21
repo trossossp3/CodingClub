@@ -1,29 +1,37 @@
 package com.matladyhandsnam.sorting;
+import processing.core.PApplet;
+
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
+import java.util.Arrays;
 
 public class BogoSort {
 
-	public BogoSort(int[] i) {
+	public BogoSort(int[] i) throws InterruptedException {
 		int counter = 0;
 		System.out.println("I'll sort " + i.length + " elements...");
 		while (!isSorted(i)) {
 			shuffle(i);
+			print(i);
+			//Thread.sleep(200);
 			counter++;
 			/*
 			 * if(counter%1000000==0) { System.out.println(counter); }
 			 */
 		}
-		System.out.println("Solution found! (shuffled " + counter + " times)");
+		System.out.println("\nSolution found! (shuffled " + counter + " times)");
 		print(i);
 	}
 
 	private void print(int[] i) {
-		for (int x : i) {
+		/*for (int x : i) {
 			System.out.print(x + ", ");
 		}
 		System.out.println();
+	*/
+	System.out.println(Arrays.toString(i));	
 	}
 
 	private void shuffle(int[] i) {
@@ -45,13 +53,19 @@ public class BogoSort {
 		return true;
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException, InterruptedException {
 
-		int[] i = { 639487, 512000, 218057, 116950, 782315, 771053, 179083, 795498, 19661, 299562, 553094, 587633,
-				870289, 261188, 180634, 479877, 108239, 130908, 532483, 581712, 630693, 461909, 558739, 718527, 108596,
-				738675, 640154, 844859, 262957, 222440, 439727, 526645, 757293, 897449, 230796, 97426, 277689, 357206,
-				794155, 471048, 139876, 786471, 293862, 10031, 836389, 935239, 651642, 309826, 317445, 386494, };
-		new BogoSort(i);
+		BufferedReader br = new BufferedReader(
+				new FileReader("C:\\Dev\\CodingClub\\CodingClub\\src\\com\\matladyhandsnam\\sorting\\test1.txt"));
+		int amountNums = Integer.parseInt(br.readLine());
+		int[] nums = new int[amountNums];
+		for (int i = 0; i < amountNums; i++) {
+			nums[i] = Integer.parseInt(br.readLine());
+
+		}
+		br.close();
+		new BogoSort(nums);
+
 	}
 
 }

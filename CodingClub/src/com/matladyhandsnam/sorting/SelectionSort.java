@@ -1,5 +1,10 @@
 package com.matladyhandsnam.sorting;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class SelectionSort {
 
 	public static void selectionSort(int[] arr) {
@@ -10,14 +15,16 @@ public class SelectionSort {
 				if (arr[j] < min) {
 					min = arr[j];
 					index = j;
+					
 				}
 
 			}
 			int temp = arr[i];
 			arr[i] = min;
 			arr[index] = temp;
+			print(arr);
 		}
-		print(arr);
+		
 
 	}
 	
@@ -30,9 +37,15 @@ public class SelectionSort {
 		System.out.println();
 	}
 
-	public static void main(String[] args) {
-		int[] i = { 1, 2, 3, 3, 4, 3, 2, 66, 5 };
-		selectionSort(i);
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		BufferedReader br = new BufferedReader(
+				new FileReader("C:\\Dev\\CodingClub\\CodingClub\\src\\com\\matladyhandsnam\\sorting\\test1.txt"));
+		int amountNums = Integer.parseInt(br.readLine());
+		int[] nums = new int[amountNums];
+		for (int i = 0; i < amountNums; i++) {
+			nums[i] = Integer.parseInt(br.readLine());
+		}
+		selectionSort(nums);
 	}
 
 }
